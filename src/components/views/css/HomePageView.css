@@ -1,0 +1,29 @@
+#container {
+    border: 1px solid black;
+    margin: 1vw;
+    padding: 2vw 2vw;
+    text-align: center;
+}
+
+.child {
+    display: inline-block;
+    background-color: white;
+    padding: 2vw 2vw;
+    vertical-align: middle;
+    margin: 3vw;
+    height: 25vw;
+    width: 40vw;
+    min-height: 20vw;
+    height: auto;
+}
+
+img {
+    height: 15vw;
+    width: 20vw;
+    margin: 2vw;
+    vertical-align: middle;
+}
+
+h1 {
+    color: #020685;
+}
