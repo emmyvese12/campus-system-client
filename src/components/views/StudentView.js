@@ -10,18 +10,24 @@ import './css/StudentView.css';
 const StudentView = (props) => {
   const { student, editStudent } = props;
 
+
   // Render a single Student view 
   return (
     <div>
       <div  className="studentView">
         <h1>{student.firstname + " " + student.lastname}</h1>
+        <div className="studentInfo">
+        <img src={student.imageURL} className="Profilepicture" alt="Can't render img"></img>
+        <p>First Name: {student.firstname} </p>
+        <p>Last Name: {student.lastname} </p>
         <p>Email: {student.email}</p>
-        <img src={student.imageURL} className="picture" alt="Can't render img"></img>
 
         {/* Render GPA only if it is not empty */}
-        <p>GPA: </p>
         {student.gpa &&
-          <p>{student.gpa}</p>
+          <p>GPA: {student.gpa}</p>
+        }
+        {!student.gpa &&
+            <p>GPA: </p>
         }
         {/* Check if student has campus data before rendering */}
         {student.campus && (
@@ -35,6 +41,8 @@ const StudentView = (props) => {
         <Link to={`/editstudent/${student.id}`} onClick={() => editStudent(student.id)}>
           <button>Edit</button>
        </Link>
+       <button style={{marginLeft: "10px"}}>Unenroll</button>
+       </div>
       </div>
     </div>
   );
