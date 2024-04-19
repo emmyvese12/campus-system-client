@@ -10,6 +10,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
+
 import NewStudentView from '../views/NewStudentView';
 import { addStudentThunk } from '../../store/thunks';
 
@@ -22,7 +23,7 @@ class NewStudentContainer extends Component {
       lastname: "",
       email: "",
       emailError: '',
-      imageURL: "", 
+      imageURL: "",
       gpa: 0,
       campusId: null,
       redirect: false,
@@ -44,10 +45,10 @@ class NewStudentContainer extends Component {
   handleSubmit = async event => {
     event.preventDefault();  // Prevent browser reload/refresh after submit.
 
-    if(this.state.imageURL == ""){
+    if (this.state.imageURL === "") {
       this.state.imageURL = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
     }
-
+    
     let student = {
       firstname: this.state.firstname,
       lastname: this.state.lastname,
@@ -57,20 +58,26 @@ class NewStudentContainer extends Component {
       imageURL: this.state.imageURL
     };
 
-    // Add new student in back-end database
-    let newStudent = await this.props.addStudent(student);
+    try {
+      // Add new student in back-end database
+      let newStudent = await this.props.addStudent(student);
 
-    // Update state, and trigger redirect to show the new student
-    this.setState({
-      firstname: "",
-      lastname: "",
-      email: "",
-      imageURL: "", 
-      gpa: 0,
-      campusId: null,
-      redirect: true,
-      redirectId: newStudent.id
-    });
+      // Update state, and trigger redirect to show the new student
+      this.setState({
+        firstname: "",
+        lastname: "",
+        email: "",
+        imageURL: "",
+        gpa: 0,
+        campusId: null,
+        redirect: true,
+        redirectId: newStudent.id
+      });
+    } catch (error) {
+      // Show an alert if addStudent fails
+      alert("Please Enter Valid Campus Id.");
+      //console.error("Error adding student:", error);
+    }
   }
 
   // Unmount when the component is being removed from the DOM:
