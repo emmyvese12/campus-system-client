@@ -84,6 +84,7 @@ export const editStudentThunk = (id, student) => async dispatch => {  // The THU
     dispatch(ac.editStudent(updatedStudent));
   } catch(err) {
     console.error(err);
+    throw err;
   }
 };
 
