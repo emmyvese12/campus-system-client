@@ -51,21 +51,23 @@ class EditStudentContainer extends Component {
         campusId: this.state.campusId
     };
     
-    // Edit student in back-end database
-    let alteredStudent = await this.props.editStudent(id, student);
-
-    // Update state, and trigger redirect to show the updated student
-    this.setState({
-      firstname: "",
-      lastname: "",
-      email: "",
-      imageURL: "",
-      gpa: "",
-      campusId: "",
-      redirect: true,
-      redirectId: id
-    });
-  }
+    try {
+      await this.props.editStudent(id, student);
+      // Update state and trigger redirect to show the updated student
+      this.setState({
+        firstname: "",
+        lastname: "",
+        email: "",
+        imageURL: "",
+        gpa: "",
+        campusId: "",
+        redirect: true,
+        redirectId: id
+      });
+    } catch(error) {
+      alert("Please enter a valid campusID.");
+    }
+  };
 
   // Unmount when the component is being removed from the DOM:
   componentWillUnmount() {
