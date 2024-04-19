@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import './css/StudentView.css';
 
 const StudentView = (props) => {
-  const { student } = props;
+  const { student, editStudent } = props;
 
   // Render a single Student view 
   return (
@@ -30,10 +30,11 @@ const StudentView = (props) => {
           </Link>
         )}
         {!student.campus && (
-
           <h3>GO TO COLLEGE</h3>
         )}
-
+        <Link to={`/editstudent/${student.id}`} onClick={() => editStudent(student.id)}>
+          <button>Edit</button>
+       </Link>
       </div>
     </div>
   );
