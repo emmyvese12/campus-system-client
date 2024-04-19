@@ -44,6 +44,10 @@ class NewStudentContainer extends Component {
   handleSubmit = async event => {
     event.preventDefault();  // Prevent browser reload/refresh after submit.
 
+    if(this.state.imageURL == ""){
+      this.state.imageURL = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
+    }
+
     let student = {
       firstname: this.state.firstname,
       lastname: this.state.lastname,
