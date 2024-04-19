@@ -22,10 +22,10 @@ const HomePageView = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-    <div class="container">
+    <div className="container">
       <h1>Home Page</h1>
 
-      <div class="child">
+      <div className="child">
         <h2>View Campuses</h2>
         <Link className={classes.links} to={'/campuses'} >
           <Button variant="contained" color="primary">
@@ -33,10 +33,10 @@ const HomePageView = () => {
           </Button>
         </Link>
         <br></br>
-        <img src={campusImg}></img>
+        <img src={campusImg} alt="Campus Image"></img>
       </div>
 
-      <div class="child">
+      <div className="child">
         <h2>View Students</h2>
         <Link className={classes.links} to={'/students'} >
           <Button variant="contained" color="primary">
@@ -44,7 +44,7 @@ const HomePageView = () => {
           </Button>
         </Link>
         <br></br>
-        <img src={studentImg}></img>
+        <img src={studentImg} alt="Student Image"></img>
       </div>
 </div>
     </div>
