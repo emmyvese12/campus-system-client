@@ -18,6 +18,21 @@ class StudentContainer extends Component {
     this.props.fetchStudent(this.props.match.params.id);
   }
 
+  // after the user clicks the unenroll button, edit the student and remove the campus
+  handleOnClick = async (student) => {
+    let person = {
+      id: student.id,
+      firstname: student.firstname,
+      lastname: student.lastname,
+      email: student.email,
+      imageURL: student.imageURL,
+      gpa: student.gpa,
+      campusId: null
+    };
+    await this.props.editStudent(person.id, person);
+    window.location.reload(); // refresh the page after updating the student
+  };
+  
   // Render Student view by passing student data as props to the corresponding View component
   render() {
     return (
@@ -25,7 +40,8 @@ class StudentContainer extends Component {
         <Header />
         <StudentView
           student={this.props.student}
-          editStudent={this.props.editStudent}  />
+          editStudent={this.props.editStudent}
+          unenrollStudent={this.handleOnClick}  />
       </div>
     );
   }
@@ -43,7 +59,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchStudent: (id) => dispatch(fetchStudentThunk(id)),
-    editStudent: (student) => dispatch(editStudentThunk(student)),
+    editStudent: (id, student) => dispatch(editStudentThunk(id, student))
   };
 };
 

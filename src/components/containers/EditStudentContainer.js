@@ -36,7 +36,7 @@ class EditStudentContainer extends Component {
   handleSubmit = async event => {
     event.preventDefault();  // Prevent browser reload/refresh after submit.
 
-    if(this.state.gpa === "") {
+    if(this.state.gpa === "") { //If no gpa is inputted, gpa is set to 0
         this.state.gpa = 0;
     }
 
@@ -52,7 +52,9 @@ class EditStudentContainer extends Component {
     };
     
     try {
+      // Edit student in back-end database
       await this.props.editStudent(id, student);
+
       // Update state and trigger redirect to show the updated student
       this.setState({
         firstname: "",
@@ -75,6 +77,7 @@ class EditStudentContainer extends Component {
   }
 
   render() {
+    // Go back to the single student view after clicking submit
     if(this.state.redirect) {
       return (<Redirect to={`/student/${this.state.redirectId}`}/>)
     }
