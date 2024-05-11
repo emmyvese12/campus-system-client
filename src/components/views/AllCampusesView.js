@@ -8,12 +8,19 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const AllCampusesView = (props) => {
-  // If there is no campus, display a message.
+  // If there is no campus, display a message, and allow to add a new campus
   if (!props.allCampuses.length) {
-    return <div>There are no campuses.</div>;
+    return (
+    <div>
+      <p>There are no campuses.</p>
+      <Link to={`/newcampus`}>
+        <button>Add New Campus</button>
+      </Link>
+      </div>
+    );
   }
 
-  // If there is at least one campus, render All Campuses view 
+  // If there is at least one campus, render All Campuses view, and allow to add a new campus
   return (
     <div>
       <h1>All Campuses</h1>
@@ -30,7 +37,7 @@ const AllCampusesView = (props) => {
         </div>
       ))}
       <br/>
-      <Link to={`/`}>
+      <Link to={`/newcampus`}>
         <button>Add New Campus</button>
       </Link>
       <br/><br/>
