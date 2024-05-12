@@ -1,0 +1,25 @@
+.image{
+    height: 15vw;
+    width: 20vw;
+    margin: 2vw;
+    vertical-align: middle;
+}
+
+.whitebox {
+    background-color: white;
+    position: center;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    margin-bottom: 2.5vw;
+    min-height: 20vw;
+    padding: 1vw 1vw;
+    vertical-align: middle;
+    height: auto;
+}
+
+#container {
+    border: 1px solid black;
+    margin: 1vw;
+    padding: 2vw 2vw;
+    text-align: center;
+}
