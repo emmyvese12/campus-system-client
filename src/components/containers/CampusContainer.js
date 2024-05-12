@@ -8,7 +8,7 @@ If needed, it also defines the component's "connect" function.
 import Header from './Header';
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { editCampusThunk, fetchCampusThunk } from "../../store/thunks";
+import { editStudentThunk, editCampusThunk, fetchCampusThunk } from "../../store/thunks";
 import { CampusView } from "../views";
 
 class CampusContainer extends Component {
@@ -18,14 +18,30 @@ class CampusContainer extends Component {
     this.props.fetchCampus(this.props.match.params.id);
   }
 
+  // after the user clicks the unenroll button, edit the student and remove the campus
+  handleOnClick = async (student) => {
+    let person = {
+      id: student.id,
+      firstname: student.firstname,
+      lastname: student.lastname,
+      email: student.email,
+      imageURL: student.imageURL,
+      gpa: student.gpa,
+      campusId: null
+    };
+    await this.props.editStudent(person.id, person);
+    window.location.reload(); // refresh the page after updating the student
+  };
+  
   // Render a Campus view by passing campus data as props to the corresponding View component
   render() {
     return (
       <div>
         <Header />
         <CampusView 
-        campus={this.props.campus} 
-        editCampus={this.props.editCampus} />
+          campus={this.props.campus} 
+          editCampus={this.props.editCampus} 
+          unenrollStudent={this.handleOnClick}  />
       </div>
     );
   }
@@ -45,6 +61,7 @@ const mapDispatch = (dispatch) => {
   return {
     fetchCampus: (id) => dispatch(fetchCampusThunk(id)),
     editCampus: (id, campus) => dispatch(editCampusThunk(id, campus)),
+    editStudent: (id, student) => dispatch(editStudentThunk(id, student))
   };
 };
 
