@@ -21,7 +21,7 @@ class NewCampusContainer extends Component {
       name: "", 
       address: "", 
       description: "",
-      imageURL: "",
+      imageUrl: "",
       redirect: false, 
       redirectId: null
     };
@@ -41,13 +41,13 @@ class NewCampusContainer extends Component {
   handleSubmit = async event => {
     event.preventDefault();  // Prevent browser reload/refresh after submit.
 
-    if (this.state.imageURL === "") {
-        this.state.imageURL = "https://www.nyit.edu/files/campus_life/CampusLife_LandingPage_Location_LongIsland_500.jpg";
+    if (this.state.imageUrl === "") {
+        this.state.imageUrl = "https://www.nyit.edu/files/campus_life/CampusLife_LandingPage_Location_LongIsland_500.jpg";
     }
 
     let campus = {
         name: this.state.name,
-        imageURL: this.state.imageURL,
+        imageUrl: this.state.imageUrl,
         address: this.state.address,
         description: this.state.description
       };
@@ -59,7 +59,7 @@ class NewCampusContainer extends Component {
     // Update state, and trigger redirect to show the new campus
     this.setState({
       name: "", 
-      imageURL: "",
+      imageUrl: "",
       address: "", 
       description: "",
       redirect: true, 

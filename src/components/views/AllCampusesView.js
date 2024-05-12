@@ -8,18 +8,16 @@ import PropTypes from "prop-types";
 import Button from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
+import './css/AllCampusesView.css';
 
 const AllCampusesView = (props) => {
   // If there is no campus, display a message, and allow to add a new campus
   if (!props.allCampuses.length) {
     return (
-    <div>
+    <div className = "container">
       <p>There are no campuses.</p>
       <Link to={`/newcampus`}>
-      <Button variant="contained" type="submit" style={
-      {backgroundColor: "#808080",  
-        borderColor: "#808080", 
-        color: "white"}}>
+      <Button variant="contained" color="primary" type="submit">
         Add New Campus
       </Button>
       </Link>
@@ -27,28 +25,26 @@ const AllCampusesView = (props) => {
     );
   }
 
-  // If there is at least one campus, render All Campuses view, and allow to add a new campus
+  // If there is at least one campus, sort campus by ID before rendering 
+  // render All Campuses view, and allow to add a new campus
   return (
-    <div>
+    <div className = "container">
       <h1>All Campuses</h1>
 
-      {props.allCampuses.map((campus) => (
-        <div key={campus.id}>
+      {props.allCampuses.sort((campus1, campus2) => campus1.id - campus2.id).map((campus) => (
+        <div key={campus.id} className="whitebox">
           <Link to={`/campus/${campus.id}`}>
             <h2>{campus.name}</h2>
           </Link>
-          <h4>campus id: {campus.id}</h4>
-          <p>{campus.address}</p>
-          <p>{campus.description}</p>
+          <h4>Campus ID: {campus.id}</h4>
+          <img src={campus.imageUrl} className="image"></img>
           <hr/>
         </div>
+      
       ))}
       <br/>
       <Link to={`/newcampus`}>
-      <Button variant="contained" type="submit" style={
-      {backgroundColor: "#808080",  
-        borderColor: "#808080", 
-        color: "white"}}>
+      <Button variant="contained" color="primary" type="submit">
         Add New Campus
       </Button>
       </Link>
