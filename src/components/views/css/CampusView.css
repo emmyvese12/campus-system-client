@@ -1,0 +1,47 @@
+#container {
+    background-color: #b3daea;
+    padding: 1vh;
+}
+
+.image{
+    height: 15vw;
+    width: 20vw;
+    margin: 2vw;
+    vertical-align: middle;
+}
+
+.whitebox {
+    background-color: white;
+    position: center;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    margin-bottom: 2.5vw;
+    min-height: 20vw;
+    padding: 1vw 1vw;
+    vertical-align: middle;
+    height: auto;
+}
+
+.editButton {
+    background-color: #3f51b5;
+    color: white;
+    margin: 0.5vw;
+    border: 0;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor:pointer;
+    padding: 1vw 1vw;
+    border-radius: 0.25vw;
+    font-size: medium;
+}
+
+.deleteButton {
+    background-color: rgb(236, 63, 44);
+    color: white;
+    margin: 0.5vw;
+    border: 0;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor:pointer;
+    padding: 1vw 1vw;
+    border-radius: 0.25vw;
+    font-size: medium;
+}
