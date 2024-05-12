@@ -7,7 +7,6 @@ It constructs a React component to display all campuses.
 import PropTypes from "prop-types";
 import Button from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
-import { makeStyles } from '@material-ui/core/styles';
 import './css/AllCampusesView.css';
 
 const AllCampusesView = (props) => {
@@ -37,7 +36,7 @@ const AllCampusesView = (props) => {
             <h2>{campus.name}</h2>
           </Link>
           <h4>Campus ID: {campus.id}</h4>
-          <img src={campus.imageUrl} className="image"></img>
+          <img src={campus.imageUrl} className="image" alt="Campus of the college or university"></img>
           <hr/>
         </div>
       
