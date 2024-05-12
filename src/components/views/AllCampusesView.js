@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import './css/AllCampusesView.css';
 
 const AllCampusesView = (props) => {
+  const { deleteCampus } = props;
   // If there is no campus, display a message, and allow to add a new campus
   if (!props.allCampuses.length) {
     return (
@@ -37,6 +38,11 @@ const AllCampusesView = (props) => {
           </Link>
           <h4>Campus ID: {campus.id}</h4>
           <img src={campus.imageUrl} className="image" alt="Campus of the college or university"></img>
+          <div>
+            <Button variant="contained" size="small" color="secondary" type="submit" onClick={() => deleteCampus(campus.id)}>
+              DELETE CAMPUS
+            </Button>
+          </div>
           <hr/>
         </div>
       
