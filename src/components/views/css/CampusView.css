@@ -35,13 +35,18 @@
 }
 
 .deleteButton {
-    background-color: rgb(236, 63, 44);
-    color: white;
     margin: 0.5vw;
-    border: 0;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    cursor:pointer;
-    padding: 1vw 1vw;
-    border-radius: 0.25vw;
-    font-size: medium;
 }
+
+.studentContainer {
+    display: flex;
+    padding: 1vh;
+    flex-direction: row; /* To stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center;
+}
+
+.infoContainer {
+    vertical-align: middle;
+}
+
