@@ -5,7 +5,9 @@ The Views component is responsible for rendering web page with data provided by 
 It constructs a React component to display all campuses.
 ================================================== */
 import PropTypes from "prop-types";
+import Button from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
+import { makeStyles } from '@material-ui/core/styles';
 
 const AllCampusesView = (props) => {
   // If there is no campus, display a message, and allow to add a new campus
@@ -14,7 +16,12 @@ const AllCampusesView = (props) => {
     <div>
       <p>There are no campuses.</p>
       <Link to={`/newcampus`}>
-        <button>Add New Campus</button>
+      <Button variant="contained" type="submit" style={
+      {backgroundColor: "#808080",  
+        borderColor: "#808080", 
+        color: "white"}}>
+        Add New Campus
+      </Button>
       </Link>
       </div>
     );
@@ -38,7 +45,12 @@ const AllCampusesView = (props) => {
       ))}
       <br/>
       <Link to={`/newcampus`}>
-        <button>Add New Campus</button>
+      <Button variant="contained" type="submit" style={
+      {backgroundColor: "#808080",  
+        borderColor: "#808080", 
+        color: "white"}}>
+        Add New Campus
+      </Button>
       </Link>
       <br/><br/>
     </div>
