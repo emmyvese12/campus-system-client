@@ -41,8 +41,12 @@ class NewCampusContainer extends Component {
   handleSubmit = async event => {
     event.preventDefault();  // Prevent browser reload/refresh after submit.
 
+    const defautImage = "https://www.nyit.edu/files/campus_life/CampusLife_LandingPage_Location_LongIsland_500.jpg";
     if (this.state.imageUrl === "") {
-        this.state.imageUrl = "https://www.nyit.edu/files/campus_life/CampusLife_LandingPage_Location_LongIsland_500.jpg";
+      this.setState({
+        imageUrl: {defautImage}
+      })
+        
     }
 
     let campus = {
