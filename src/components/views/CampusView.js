@@ -26,10 +26,6 @@ const CampusView = (props) => {
             EDIT CAMPUS INFORMATION
           </Button>
         </Link>
-        &nbsp;
-        <Button variant="contained" color="secondary" type="submit" onClick={() => null}>
-          DELETE CAMPUS
-        </Button>
         <h2>Student Names</h2>
         { campus.students && (campus.students.map( student => {
           let name = student.firstname + " " + student.lastname;
