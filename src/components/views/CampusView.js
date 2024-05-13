@@ -12,7 +12,6 @@ import './css/CampusView.css';
 const CampusView = (props) => {
   const { campus, editCampus, unenrollStudent } = props;
   let image_desc = "The " + campus.name + " campus";
-
   // Render a single Campus view with list of its students
   return (
     <div className="container">
@@ -46,7 +45,7 @@ const CampusView = (props) => {
           }))}
         </div>
 
-        {campus.students.length === 0 && (
+        {campus && campus.students && campus.students.length === 0 && (
             <h3>No students currently enrolled.</h3>
           )}
       </div>
