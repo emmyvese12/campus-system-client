@@ -26,7 +26,9 @@ const CampusView = (props) => {
           </Button>
         </Link>
 
-        <h2>Student Information</h2>
+        {campus && campus.students && (
+          <h2>Total Students: {campus.students.length}</h2>
+          )}
         <div className="infoContainer">
           { campus.students && (campus.students.map( student => {
             let name = student.firstname + " " + student.lastname;
