@@ -56,7 +56,7 @@ class EditCampusContainer extends Component {
         redirectId: id
       });
     } catch(error) {
-      alert("Please enter a valid campusID.");
+      alert("Please change information before submitting.");
     }
   };
 
