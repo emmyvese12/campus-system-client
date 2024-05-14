@@ -67,7 +67,7 @@ const EditCampusView = (props) => {
             <br />
 
             <label style={{ color: '#11153e', fontWeight: 'bold' }}>Description: </label>
-            <input placeholder="Enter description here" style={{ width: '300px', height: '100px', resize: 'both', 
+            <textarea placeholder="Enter description here" style={{ width: '300px', height: '100px', resize: 'both', 
             padding: '5px', fontSize: '16px', verticalAlign: 'top', minHeight: '20px', maxWidth: '400px', maxHeight: '400px'}}
             required value={description} type="textarea" name="description" onChange={(e) => handleChange(e)} />
             <br />
