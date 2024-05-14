@@ -40,6 +40,7 @@ const EditStudentView = (props) => {
   const { handleChange, handleSubmit, firstname, lastname, email, imageURL, gpa, campusId } = props;
   const classes = useStyles();
 
+
   // Render an Edit Student view with an input form
   return (
     <div>
@@ -48,7 +49,7 @@ const EditStudentView = (props) => {
         <div className={classes.formContainer}>
           <div className={classes.formTitle} style={{ backgroundColor: 'white' }}>
             <Typography style={{ fontWeight: 'bold', fontSize: '20px', color: '#11153e' }}>
-              Edit a student
+            Edit a student
             </Typography>
           </div>
 
@@ -79,7 +80,7 @@ const EditStudentView = (props) => {
             <br />
 
 
-            <label style={{ color: '#11153e', fontWeight: 'bold' }}>Campus Id: </label>
+            <label style={{ color: '#11153e', fontWeight: 'bold' }}>Campus ID: </label>
             <input required value={campusId} type="text" name="campusId" onChange={(e) => handleChange(e)} />
             <br />
             <br />
