@@ -7,7 +7,7 @@ It constructs a React component to display the new student page.
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const useStyles = makeStyles(() => ({
   formContainer: {
@@ -37,7 +37,15 @@ const useStyles = makeStyles(() => ({
 const EditStudentView = (props) => {
   const { handleChange, handleSubmit, firstname, lastname, email, imageURL, gpa, campusId } = props;
   const classes = useStyles();
+  const [title, setTitle] = useState(0);
 
+
+
+  useEffect(() => {
+    if(firstname && lastname) {
+      setTitle(firstname + " " + lastname);
+    }
+  }, []);
 
   // Render an Edit Student view with an input form
   return (
@@ -47,7 +55,7 @@ const EditStudentView = (props) => {
         <div className={classes.formContainer}>
           <div className={classes.formTitle} style={{ backgroundColor: 'white' }}>
             <Typography style={{ fontWeight: 'bold', fontSize: '20px', color: '#11153e' }}>
-            Edit a student
+             {title}
             </Typography>
           </div>
 
