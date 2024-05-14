@@ -6,9 +6,10 @@ It constructs a React component to display the single student view page.
 ================================================== */
 import { Link } from "react-router-dom";
 import './css/StudentView.css';
+import Button from '@material-ui/core/Button';
 
 const StudentView = (props) => {
-  const { student, editStudent, unenrollStudent } = props;
+  const { student, editStudent } = props;
 
   // Render a single Student view 
   return (
@@ -26,21 +27,27 @@ const StudentView = (props) => {
             <p>GPA: {student.gpa}</p>
           }
           {!student.gpa &&
-            <p>GPA: </p>
+            <p style={{marginBottom: "0"}}>GPA: </p>
           }
+
           {/* Check if student has campus data before rendering */}
           {student.campus && (
-            <Link to={`/campus/${student.campus.id}`}>
-              <h3>{student.campus.name}</h3>
-            </Link>
+            <div>
+              <p style={{display: "inline-block", marginRight: "2px"}}>Attends: </p>
+              <Link style={{display: "inline-block", marginLeft: "2px"}} to={`/campus/${student.campus.id}` }>
+                <h3>{student.campus.name}</h3>
+              </Link>
+            </div>
           )}
           {!student.campus && (
-            <h3>GO TO COLLEGE</h3>
+            <div>
+               <p style={{display: "inline-block", marginRight: "2px"}}>Attends: </p>
+              <h3 style={{display: "inline-block", marginLeft: "2px"}}>{student.firstname} {student.lastname} is not enrolled in a college.</h3>
+            </div>
           )}
           <Link to={`/editstudent/${student.id}`} onClick={() => editStudent(student.id)}>
-            <button>Edit</button>
+            <Button variant="contained" color="primary" type="submit">Edit</Button>
           </Link>
-          <button style={{ marginLeft: "10px" }} onClick={() => unenrollStudent(student)}>Unenroll</button>
         </div>
       </div>
     </div>

@@ -4,3 +4,22 @@
     height: 15vw;
     margin: 0;
 }
+
+.whitebox {
+    background-color: white;
+    position: center;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    margin-bottom: 2.5vw;
+    min-height: 20vw;
+    padding: 1vw 1vw;
+    vertical-align: middle;
+    height: auto;
+}
+
+#container {
+    border: 1px solid black;
+    margin: 1vw;
+    padding: 2vw 2vw;
+    text-align: center;
+}

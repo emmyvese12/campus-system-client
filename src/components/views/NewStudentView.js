@@ -6,7 +6,7 @@ It constructs a React component to display the new student page.
 ================================================== */
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { alpha, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 // Create styling for the input form
 const useStyles = makeStyles(() => ({
