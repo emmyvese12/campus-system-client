@@ -52,7 +52,7 @@ const NewCampusView = (props) => {
             </Typography>
           </div>
           <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
-          <label style={{ color: '#11153e', fontWeight: 'bold' }}>Campus Name: </label>
+          <label style={{ color: '#11153e', fontWeight: 'bold' }}>*Campus Name: </label>
             <input type="text" required name="name" onChange={(e) => handleChange(e)} />
             <br />
             <br />
@@ -62,7 +62,7 @@ const NewCampusView = (props) => {
             <br />
             <br />
 
-            <label style={{ color: '#11153e', fontWeight: 'bold' }}>Address: </label>
+            <label style={{ color: '#11153e', fontWeight: 'bold' }}>*Address: </label>
             <input type="text" required name="address" onChange={(e) => handleChange(e)} />
             <br />
             <br />
