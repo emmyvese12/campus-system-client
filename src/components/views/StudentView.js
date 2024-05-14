@@ -9,7 +9,7 @@ import './css/StudentView.css';
 import Button from '@material-ui/core/Button';
 
 const StudentView = (props) => {
-  const { student, editStudent, unenrollStudent } = props;
+  const { student, editStudent } = props;
 
   // Render a single Student view 
   return (

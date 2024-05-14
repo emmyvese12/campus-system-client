@@ -33,7 +33,7 @@ const HomePageView = () => {
           </Button>
         </Link>
         <br></br>
-        <img src={campusImg} alt="Campus Image"></img>
+        <img src={campusImg} alt="Campus"></img>
       </div>
 
       <div className="child">
@@ -44,7 +44,7 @@ const HomePageView = () => {
           </Button>
         </Link>
         <br></br>
-        <img src={studentImg} alt="Student Image"></img>
+        <img src={studentImg} alt="Student"></img>
       </div>
 </div>
     </div>
