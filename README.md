@@ -2,6 +2,12 @@
 
 This repository is the client (front-end) starter code for Final Project - Full-Stack CRUD Application.
 
+### Group
+1. Emmy Veselinov - emmyvese12
+2. Ellen Avrumova - ellenAvrumova
+3. Krina Patel - Krinap2003
+4. Jubayer Ahmed - jubuyer
+
 ----------
 ### 1. Use the following process to ***import*** the Final Project client starter code repository to your GitHub account as the starter codebase
 1.	Log on to GitHub
