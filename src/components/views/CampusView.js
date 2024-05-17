@@ -50,6 +50,10 @@ const CampusView = (props) => {
         {campus && campus.students && campus.students.length === 0 && (
             <h3>No students currently enrolled.</h3>
           )}
+
+      <Link to={`/newstudent`}>
+        <Button variant="contained" color="primary" type="submit">Add New Student</Button>
+      </Link>
       </div>
     </div>
   );
