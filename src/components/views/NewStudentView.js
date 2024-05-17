@@ -77,7 +77,7 @@ const NewStudentView = (props) => {
             <br />
             <br />
 
-            <label style={{ color: '#11153e', fontWeight: 'bold' }}>Campus Id: </label>
+            <label style={{ color: '#11153e', fontWeight: 'bold' }}>Campus ID: </label>
             <input type="test" name="campusId" onChange={(e) => handleChange(e)} />
             <br />
             <br />
